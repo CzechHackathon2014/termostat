@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ITz-t0-8Eu">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ybE-as-sSJ">
+            <objects>
+                <navigationController id="ITz-t0-8Eu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uj3-QX-IJw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="N5O-N2-tlu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxw-fn-gw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-379" y="345"/>
+        </scene>
+        <!--Active Thermostats-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ThermostatsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3I0-Vg-AZn">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThermostatTableViewCell" rowHeight="100" id="xBQ-UC-FQ8" customClass="ThermostatTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xBQ-UC-FQ8" id="jiB-Fz-tqB">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Koupelna" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT0-D1-puP">
+                                                    <rect key="frame" x="8" y="8" width="433" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="LXV-HR-BhF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.5°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQz-v5-z9E">
+                                                    <rect key="frame" x="470" y="15" width="122" height="77"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="40"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.5°C /" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-Wm-DB5">
+                                                    <rect key="frame" x="324" y="15" width="146" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="2Zv-YW-2LM"/>
+                                                        <constraint firstAttribute="width" constant="146" id="fek-Sa-eeN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="30"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sQz-v5-z9E" firstAttribute="leading" secondItem="IMG-Wm-DB5" secondAttribute="trailing" id="4Sn-aG-BmK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IMG-Wm-DB5" secondAttribute="bottom" id="DSA-6P-e7j"/>
+                                                <constraint firstItem="wT0-D1-puP" firstAttribute="leading" secondItem="jiB-Fz-tqB" secondAttribute="leadingMargin" id="EDp-Sc-Vy6"/>
+                                                <constraint firstItem="sQz-v5-z9E" firstAttribute="bottom" secondItem="jiB-Fz-tqB" secondAttribute="bottomMargin" id="Mty-68-2Bh"/>
+                                                <constraint firstItem="sQz-v5-z9E" firstAttribute="trailing" secondItem="jiB-Fz-tqB" secondAttribute="trailingMargin" id="VEt-1m-zyQ"/>
+                                                <constraint firstItem="wT0-D1-puP" firstAttribute="top" secondItem="jiB-Fz-tqB" secondAttribute="topMargin" id="WfZ-JA-Y28"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wT0-D1-puP" secondAttribute="trailing" constant="151" id="khM-nR-7cc"/>
+                                                <constraint firstItem="IMG-Wm-DB5" firstAttribute="top" secondItem="jiB-Fz-tqB" secondAttribute="topMargin" constant="7" id="p0R-yz-rW2"/>
+                                                <constraint firstItem="sQz-v5-z9E" firstAttribute="top" secondItem="jiB-Fz-tqB" secondAttribute="topMargin" constant="7" id="wTo-Bw-wgR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="actualTemperature" destination="IMG-Wm-DB5" id="sVN-vC-Prc"/>
+                                            <outlet property="name" destination="wT0-D1-puP" id="gnO-Gh-A8e"/>
+                                            <outlet property="preferedTemperature" destination="sQz-v5-z9E" id="F0w-NJ-8cl"/>
+                                            <segue destination="yrr-iz-2mJ" kind="show" identifier="EditThermostat" id="ayn-4y-rLH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="8nu-c5-j39"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="96q-ca-nur"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3I0-Vg-AZn" secondAttribute="trailing" constant="-16" id="28a-Ef-zUR"/>
+                            <constraint firstItem="3I0-Vg-AZn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ey7-gP-Rof"/>
+                            <constraint firstItem="3I0-Vg-AZn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-44" id="V2p-OJ-p2s"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3I0-Vg-AZn" secondAttribute="bottom" id="X9J-pT-fva"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Active Thermostats" id="kUV-8B-iig">
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="TbK-Lv-Izu">
+                            <connections>
+                                <segue destination="Cop-im-fHf" kind="show" id="t6w-9h-ifg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Presets" id="VAi-uu-3DK">
+                            <connections>
+                                <segue destination="Ncv-5S-eRN" kind="show" id="kBG-n7-ooD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="3I0-Vg-AZn" id="Bxo-Gc-R5I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="345"/>
+        </scene>
+        <!--Presets View Controller-->
+        <scene sceneID="wMm-v2-Cej">
+            <objects>
+                <viewController id="Ncv-5S-eRN" customClass="PresetsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Fu-Be-jvZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZPw-2D-FNM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w3l-MK-dzy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLJ-Ap-Vsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="-537"/>
+        </scene>
+        <!--Edit Thermostat-->
+        <scene sceneID="mCb-vd-Fc1">
+            <objects>
+                <viewController id="yrr-iz-2mJ" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Uc-PV-y8D"/>
+                        <viewControllerLayoutGuide type="bottom" id="c4S-1c-hFC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="73C-Rq-ZlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pracovna" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vl4-bH-2zp">
+                                <rect key="frame" x="16" y="184" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RpG-NQ-ice"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enteredValue:" destination="yrr-iz-2mJ" eventType="editingDidEndOnExit" id="m4a-qX-77F"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.5 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD8-vr-7eh">
+                                <rect key="frame" x="16" y="244" width="568" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="I2a-Gm-u0F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="100" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3N2-pt-YVW">
+                                <rect key="frame" x="16" y="101" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XL8-1l-uVp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enteredValue:" destination="yrr-iz-2mJ" eventType="editingDidEndOnExit" id="BUL-op-wPh"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-WO-WGF">
+                                <rect key="frame" x="16" y="155" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rzo-qW-Uyz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-zv-ke8">
+                                <rect key="frame" x="14" y="339" width="572" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xiN-0x-v1Y"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.064285169030000006" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.0" blue="0.1100805916" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="temperatureSliderMoved:" destination="yrr-iz-2mJ" eventType="valueChanged" id="uMF-jj-jtF"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thermostat ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duD-JG-Uvk">
+                                <rect key="frame" x="16" y="72" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="T6u-H3-zod"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="duD-JG-Uvk" firstAttribute="trailing" secondItem="73C-Rq-ZlJ" secondAttribute="trailingMargin" id="0OJ-ez-Hj7"/>
+                            <constraint firstItem="Chp-zv-ke8" firstAttribute="trailing" secondItem="73C-Rq-ZlJ" secondAttribute="trailingMargin" id="0h1-MZ-euD"/>
+                            <constraint firstItem="cg6-WO-WGF" firstAttribute="top" secondItem="3N2-pt-YVW" secondAttribute="bottom" constant="24" id="49b-CY-ynd"/>
+                            <constraint firstItem="kD8-vr-7eh" firstAttribute="trailing" secondItem="73C-Rq-ZlJ" secondAttribute="trailingMargin" id="7Ci-pN-H4s"/>
+                            <constraint firstItem="kD8-vr-7eh" firstAttribute="leading" secondItem="73C-Rq-ZlJ" secondAttribute="leadingMargin" id="BTc-Zi-5Ye"/>
+                            <constraint firstItem="Vl4-bH-2zp" firstAttribute="leading" secondItem="73C-Rq-ZlJ" secondAttribute="leadingMargin" id="CS0-yb-hh0"/>
+                            <constraint firstItem="Vl4-bH-2zp" firstAttribute="trailing" secondItem="73C-Rq-ZlJ" secondAttribute="trailingMargin" id="Dur-3N-k9g"/>
+                            <constraint firstItem="cg6-WO-WGF" firstAttribute="trailing" secondItem="73C-Rq-ZlJ" secondAttribute="trailingMargin" id="Hf3-28-fCw"/>
+                            <constraint firstItem="3N2-pt-YVW" firstAttribute="top" secondItem="duD-JG-Uvk" secondAttribute="bottom" constant="8" id="Hfy-4w-kVc"/>
+                            <constraint firstItem="Chp-zv-ke8" firstAttribute="top" secondItem="kD8-vr-7eh" secondAttribute="bottom" constant="8" id="IcM-q0-KEr"/>
+                            <constraint firstItem="Chp-zv-ke8" firstAttribute="top" secondItem="kD8-vr-7eh" secondAttribute="bottom" constant="9" id="PYJ-fo-eVe"/>
+                            <constraint firstItem="duD-JG-Uvk" firstAttribute="leading" secondItem="73C-Rq-ZlJ" secondAttribute="leadingMargin" id="PeH-4b-8wN"/>
+                            <constraint firstItem="cg6-WO-WGF" firstAttribute="leading" secondItem="73C-Rq-ZlJ" secondAttribute="leadingMargin" id="QnZ-Wl-9pD"/>
+                            <constraint firstItem="Vl4-bH-2zp" firstAttribute="top" secondItem="cg6-WO-WGF" secondAttribute="bottom" constant="8" id="UI0-gf-Ad6"/>
+                            <constraint firstItem="3N2-pt-YVW" firstAttribute="trailing" secondItem="73C-Rq-ZlJ" secondAttribute="trailingMargin" id="WK0-M0-LoG"/>
+                            <constraint firstItem="kD8-vr-7eh" firstAttribute="top" secondItem="Vl4-bH-2zp" secondAttribute="bottom" constant="30" id="bME-xN-DVO"/>
+                            <constraint firstItem="Chp-zv-ke8" firstAttribute="leading" secondItem="73C-Rq-ZlJ" secondAttribute="leadingMargin" id="eq7-In-TVS"/>
+                            <constraint firstItem="3N2-pt-YVW" firstAttribute="leading" secondItem="73C-Rq-ZlJ" secondAttribute="leadingMargin" id="fJG-Ya-7fW"/>
+                            <constraint firstItem="cg6-WO-WGF" firstAttribute="top" secondItem="3N2-pt-YVW" secondAttribute="bottom" constant="24" id="g3p-nz-MwK"/>
+                            <constraint firstItem="Vl4-bH-2zp" firstAttribute="top" secondItem="cg6-WO-WGF" secondAttribute="bottom" constant="8" id="gFY-Fb-gbH"/>
+                            <constraint firstItem="duD-JG-Uvk" firstAttribute="top" secondItem="2Uc-PV-y8D" secondAttribute="bottom" constant="8" id="vzi-OA-F1j"/>
+                            <constraint firstItem="3N2-pt-YVW" firstAttribute="top" secondItem="duD-JG-Uvk" secondAttribute="bottom" constant="8" id="zYZ-oZ-qJ9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zYZ-oZ-qJ9"/>
+                                <exclude reference="g3p-nz-MwK"/>
+                                <exclude reference="gFY-Fb-gbH"/>
+                                <exclude reference="PYJ-fo-eVe"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Thermostat" id="Gon-np-TIJ">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="x3J-VD-a2E">
+                            <connections>
+                                <action selector="editThermostatButtonPressed:" destination="yrr-iz-2mJ" id="w6h-gd-F1n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="idTextField" destination="3N2-pt-YVW" id="m4K-tQ-X3l"/>
+                        <outlet property="nameTextField" destination="Vl4-bH-2zp" id="aut-yP-Ebd"/>
+                        <outlet property="temperatureLabel" destination="kD8-vr-7eh" id="Wbb-sh-9Vf"/>
+                        <outlet property="temperatureSlider" destination="Chp-zv-ke8" id="FqA-aJ-FJN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNt-cq-RAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="345"/>
+        </scene>
+        <!--Add Thermostat-->
+        <scene sceneID="aWR-de-csR">
+            <objects>
+                <viewController id="Cop-im-fHf" customClass="AddThermostatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PAQ-Ad-u7K"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZCx-o4-0XX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m0B-0k-Ec6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thermostat ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzG-xP-RN8">
+                                <rect key="frame" x="16" y="79" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4sS-zt-orR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="100" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tjv-vi-HK6">
+                                <rect key="frame" x="16" y="108" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DPT-ry-zId"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enteredValue:" destination="Cop-im-fHf" eventType="editingDidEndOnExit" id="zYN-au-jtb"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGN-3q-o0o">
+                                <rect key="frame" x="16" y="162" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VfP-hp-wJ7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pracovna" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ey-cv-dSw">
+                                <rect key="frame" x="16" y="191" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oW8-SB-5qO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enteredValue:" destination="Cop-im-fHf" eventType="editingDidEndOnExit" id="9wJ-6A-CYj"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.5 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFW-9B-t84">
+                                <rect key="frame" x="16" y="251" width="568" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="sRv-qh-FIy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="k9f-32-lMg">
+                                <rect key="frame" x="14" y="346" width="572" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UgG-OL-Q1s"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.064285169027678002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.0" blue="0.11008059161256689" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="temperatureSliderMoved:" destination="Cop-im-fHf" eventType="valueChanged" id="WHc-0O-M1R"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tjv-vi-HK6" firstAttribute="top" secondItem="vzG-xP-RN8" secondAttribute="bottom" constant="8" id="6Ie-RL-chw"/>
+                            <constraint firstItem="gFW-9B-t84" firstAttribute="top" secondItem="4Ey-cv-dSw" secondAttribute="bottom" constant="30" id="8Rt-9v-mLB"/>
+                            <constraint firstItem="vzG-xP-RN8" firstAttribute="top" secondItem="PAQ-Ad-u7K" secondAttribute="bottom" constant="15" id="8vX-HC-d8k"/>
+                            <constraint firstItem="Tjv-vi-HK6" firstAttribute="leading" secondItem="m0B-0k-Ec6" secondAttribute="leadingMargin" id="EAM-qA-Woe"/>
+                            <constraint firstItem="k9f-32-lMg" firstAttribute="leading" secondItem="m0B-0k-Ec6" secondAttribute="leadingMargin" id="JRH-ij-tLF"/>
+                            <constraint firstItem="4Ey-cv-dSw" firstAttribute="leading" secondItem="m0B-0k-Ec6" secondAttribute="leadingMargin" id="OVk-ds-v6y"/>
+                            <constraint firstItem="VGN-3q-o0o" firstAttribute="top" secondItem="Tjv-vi-HK6" secondAttribute="bottom" constant="24" id="P65-tl-rml"/>
+                            <constraint firstItem="VGN-3q-o0o" firstAttribute="trailing" secondItem="m0B-0k-Ec6" secondAttribute="trailingMargin" id="Xn4-tz-Ozx"/>
+                            <constraint firstItem="VGN-3q-o0o" firstAttribute="leading" secondItem="m0B-0k-Ec6" secondAttribute="leadingMargin" id="YUY-kP-x0y"/>
+                            <constraint firstItem="gFW-9B-t84" firstAttribute="leading" secondItem="m0B-0k-Ec6" secondAttribute="leadingMargin" id="Zag-C0-KPN"/>
+                            <constraint firstItem="Tjv-vi-HK6" firstAttribute="trailing" secondItem="m0B-0k-Ec6" secondAttribute="trailingMargin" id="atO-Bp-FUq"/>
+                            <constraint firstItem="vzG-xP-RN8" firstAttribute="trailing" secondItem="m0B-0k-Ec6" secondAttribute="trailingMargin" id="buY-XB-meK"/>
+                            <constraint firstItem="4Ey-cv-dSw" firstAttribute="top" secondItem="VGN-3q-o0o" secondAttribute="bottom" constant="8" id="hD0-eP-2PT"/>
+                            <constraint firstItem="gFW-9B-t84" firstAttribute="trailing" secondItem="m0B-0k-Ec6" secondAttribute="trailingMargin" id="hhS-ar-ZlH"/>
+                            <constraint firstItem="k9f-32-lMg" firstAttribute="top" secondItem="gFW-9B-t84" secondAttribute="bottom" constant="8" id="nie-wu-rXT"/>
+                            <constraint firstItem="4Ey-cv-dSw" firstAttribute="trailing" secondItem="m0B-0k-Ec6" secondAttribute="trailingMargin" id="p1h-b6-K1b"/>
+                            <constraint firstItem="vzG-xP-RN8" firstAttribute="leading" secondItem="m0B-0k-Ec6" secondAttribute="leadingMargin" id="qdd-zj-gft"/>
+                            <constraint firstItem="k9f-32-lMg" firstAttribute="trailing" secondItem="m0B-0k-Ec6" secondAttribute="trailingMargin" id="u3D-fG-6sb"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Thermostat" id="7Lm-56-i8a">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="v7O-C3-XtR">
+                            <connections>
+                                <action selector="addThermostatButtonPressed:" destination="Cop-im-fHf" id="PDw-1J-vYv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="idTextField" destination="Tjv-vi-HK6" id="3ar-ik-Kcq"/>
+                        <outlet property="nameTextField" destination="4Ey-cv-dSw" id="Z9V-tm-OCA"/>
+                        <outlet property="temperatureLabel" destination="gFW-9B-t84" id="dgi-OM-mwj"/>
+                        <outlet property="temperatureSlider" destination="k9f-32-lMg" id="HFG-s8-Alp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SyT-Ek-ybx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="1212"/>
+        </scene>
+    </scenes>
+</document>
